@@ -10,7 +10,13 @@ const computerOptions = [
 
 // making a function that calls a random string
 
-let  randomSelection = Math.floor(Math.random()*computerOptions.length);
-computerSelection = computerOptions[randomSelection]
+function computerPlay(){
+    return computerOptions[Math.floor(Math.random()*computerOptions.length)]
+};
+
+let computerSelection = computerPlay()
 console.log(computerSelection)
 
+// Geting player input 
+
+ 
