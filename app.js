@@ -19,4 +19,43 @@ console.log(computerSelection)
 
 // Geting player input 
 
-const playerSelection = prompt('Rock, Paper, Scissors').toLowerCase
+let playerSelection = prompt('Rock, Paper, Scissors').toLowerCase()
+
+// Base function of the game
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === 'rock' && computerSelection === 'rock') {
+        return "tie game"  
+    }
+    else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        return 'You Lose'
+    }
+    else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return 'You Win'
+    }
+
+    if (playerSelection === 'paper' && computerSelection === 'rock') {
+        return "You Win"
+    }
+    else if (playerSelection === 'paper' && computerSelection === 'paper') {
+        return 'tie game'
+    }
+    else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        return 'You Lose'
+    }
+
+    if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        return "You Lose"
+    }
+    else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        return 'You Win'
+    }
+    else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        return 'tie game'
+    }
+    else {
+        return 'You have to make a choice'
+    }
+};
+
+console.log(playRound(playerSelection, computerSelection));
