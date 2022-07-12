@@ -19,4 +19,4 @@ console.log(computerSelection)
 
 // Geting player input 
 
- 
+const playerSelection = prompt('Rock, Paper, Scissors').toLowerCase
