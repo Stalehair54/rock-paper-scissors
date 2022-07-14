@@ -21,41 +21,74 @@ console.log(computerSelection)
 
 let playerSelection = prompt('Rock, Paper, Scissors').toLowerCase()
 
-// Base function of the game
+// Base function of the game      
+      let playerScore = 0 
+        let computerScore= 0
+
 
 function playRound(playerSelection, computerSelection) {
+    let result = ""
     if (playerSelection === 'rock' && computerSelection === 'rock') {
-        return "tie game"  
+       return result = "tie game";
     }
     else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        return 'You Lose'
+       result = 'You Lose',
+        computerScore++ 
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        return 'You Win'
+        result = 'You Win';
+        playerScore++;
     }
 
-    if (playerSelection === 'paper' && computerSelection === 'rock') {
-        return "You Win"
+    else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        result = 'You Win';
+        playerScore++;
     }
     else if (playerSelection === 'paper' && computerSelection === 'paper') {
-        return 'tie game'
+        result = "tie game";
     }
     else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return 'You Lose'
+        result = 'You Lose';
+        computerScore++
     }
 
-    if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return "You Lose"
+    else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        result = 'You Lose';
+        computerScore++
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        return 'You Win'
+        result = 'You Win';
+        playerScore++;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-        return 'tie game'
+        result = "tie game";
     }
     else {
         return 'You have to make a choice'
     }
 };
 
-console.log(playRound(playerSelection, computerSelection));
+ // console.log(playRound(playerSelection, computerSelection));
+
+// Making the 5 round game
+
+//Getting the score 
+
+// function needs to take in score and add to either the player or the computer then after 5 turns return a winner
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt('Rock, Paper, Scissors').toLowerCase()
+        const computerSelection = computerPlay()
+        console.log(computerSelection)
+        playRound(playerSelection,computerSelection)
+        console.log(playRound(playerSelection,computerSelection))
+    }
+    if (playerScore > computerScore) {
+        return "you win"
+    } else {
+        return 'you lose'
+    }
+}
+
+console.log(game())
